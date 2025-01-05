@@ -1,0 +1,19 @@
+.cardField{
+    border: solid 3px #2b2b2b;
+    border-radius: 15px;
+    padding: 20px 20px;
+}
+
+.cardStack{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardInput{
+    background-color: #2b2b2b;
+    padding: 10px;
+    height: 40px;
+    border-radius: 6px;
+    width: 100%;
+}

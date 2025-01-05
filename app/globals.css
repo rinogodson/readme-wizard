@@ -1,13 +1,13 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --size: 10px;
 }
 
 html,
@@ -22,21 +22,171 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-shadow: inset 0 0 100px 5px #1e012a85;
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation 0.5s infinite;
+  opacity: 1;
+  visibility: visible;
+  z-index: -1000;
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -5%)
+  }
+
+  20% {
+    transform: translate(-10%, 5%)
+  }
+
+  30% {
+    transform: translate(5%, -10%)
+  }
+
+  40% {
+    transform: translate(-5%, 15%)
+  }
+
+  50% {
+    transform: translate(-10%, 5%)
+  }
+
+  60% {
+    transform: translate(15%, 0)
+  }
+
+  70% {
+    transform: translate(0, 10%)
+  }
+
+  80% {
+    transform: translate(-15%, 0)
+  }
+
+  90% {
+    transform: translate(10%, 5%)
+  }
+
+  100% {
+    transform: translate(5%, 0)
+  }
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  outline: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.container {
+  background-color: #0b0b0b;
+  border: solid 3px #1b1b1b;
+  width: 95vw;
+  height: 95vh;
+  border-radius: 40px 40px 20px 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 50px 1px #000000;
+  display: grid;
+  grid-template-rows: 100px calc((100vh - 5vh) - 150px) 50px;
+  max-width: 2000000px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.top {
+  background-color: #161616;
+  border-bottom: solid 1px #1B1B1B;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 25px;
+}
+
+
+
+.smallButtonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.addBt {
+  background: rgba(215, 141, 255, 0.07);
+  border: 2px solid #D78DFF;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: Mona Sans;
+  font-variation-settings: "wdth" 100;
+  font-weight: 600;
+  font-size: 22px;
+  width: fit-content;
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+
+.addBt:active{
+  background: rgba(215, 141, 255, 0.07);
+  transform: scale(0.98);
+  border: 2px solid #D78DFF;
+  font-family: Mona Sans;
+  font-variation-settings: "wdth" 100;
+  font-weight: 700;
+}
+.addBtIcon{
+  transition: all 0.3s ease;
+}
+.addBt:hover .addBtIcon{
+  transform: scale(1.5);
+  color: #D78DFF;
+}
+
+.instruction{
+  font-size: 20px;
+  font-family: Mona Sans;
+  font-variation-settings: "wdth" 100;
+  color: #494949;
+}
+
+.foot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  padding-inline: 15px;
+  width: 100%;
+  height: 50px;
+  border-top: solid 3px #1b1b1b;
+}
+
+.main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onBulb{
+  width: 8px;
+  height: 8px;
+  
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }

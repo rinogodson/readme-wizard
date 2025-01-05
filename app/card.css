@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap');
+
+.card-cont{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.059);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2);
+    box-shadow: inset 0 0 1000px 50px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardBox{
+    z-index: 9999;
+    width: 500px;
+    height: fit-content;
+    background-color: #1b1b1b;
+    border: solid 2px #2b2b2b;
+    border-radius: 20px;
+    display: grid;
+    padding: 10px;
+    grid-template-rows: 1fr;
+    font-family: "Mona Sans";
+}
+
+.CardFooter{
+    border-top: solid 1px #494949;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-inline: 10px;
+    padding-top: 20px;
+}
+
+.CardBt{
+    color: #1b1b1b;
+    height: 35px;
+    padding: 10px 20px;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-variation-settings: "wdth" 300;
+    font-weight: 500;
+    transition: all 0.1s ease;
+}
+.CardBt:active{
+    transform: scale(0.92);
+}
+
+.CardBody{
+    padding: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,26 @@
+.menuItemChild{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    font-size: 28px;
+}
+
+.MenuIcon{
+    transition: all 0.3s ease;
+}
+
+.menuItem{
+    transition: all 0.3s ease;
+}
+.menuItem:active{
+    transform: scale(0.98);
+}
+
+.menuItem:hover .MenuIcon{
+    color: #D78DFF;
+    transform: scale(1.2);
+}

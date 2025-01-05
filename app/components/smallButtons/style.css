@@ -1,0 +1,22 @@
+.smallBt{
+    background-color: rgb(73, 73, 73, 0.25);
+    border: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallBt:hover{
+    transform: scale(0.98);
+    color: #D88DFF;
+}
+
+.smallBt:active{
+    transform: scale(0.9);
+    background-color: rgb(73, 73, 73, 0.50);
+}
