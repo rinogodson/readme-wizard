@@ -1,5 +1,5 @@
 # 🪄 README Wizard
-**(This README.md File was crafted with README Wizard)**
+**(This README.md File was crafted with [README Wizard](https://readme-wizard-three.vercel.app/))**
 
 *This is an outstanding project that empowers every developer to create their README.md files with unparalleled ease and convenience!*
 
@@ -25,7 +25,7 @@
    ```
 
 ## 📚 Getting Started  
-Access the application and start creating your content - it's as intuitive as using a code editor like VSCode.
+Access the [application](https://readme-wizard-three.vercel.app/) and start creating your content - it's as intuitive as using a code editor like VSCode.
 
 ## 🤝 Contributing to the Project  
 Contributions are highly valued and welcome! Please fork the repository and submit a pull request.  
