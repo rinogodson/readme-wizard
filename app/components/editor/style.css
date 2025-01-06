@@ -76,3 +76,12 @@
 .markdown-body{
     background-color: #121212;
 }
+
+em{
+    font-style: italic;
+}
+
+u{
+    text-decoration: underline;
+}
+
