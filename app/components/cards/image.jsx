@@ -7,7 +7,7 @@ function ImageMenu({setModalData, modalData}) {
 
   React.useEffect(()=>{
     setModalData(`\n![${imageData.title}](${imageData.link})\n`)
-  })
+  }, [imageData])
   return (
     <div className='cardStack'>
       <Field className="cardField" label="Image Link" required helperText="Paste a valid image url.">

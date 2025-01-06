@@ -1,8 +1,11 @@
 import React from 'react'
-import { Input } from '@chakra-ui/react'
 import { Field } from '../../../components/ui/field'
 
-function QuoteMenu() {
+function QuoteMenu({setModalData, modalData}) {
+  const [quoteData, setQuoteData] = React.useState({body:""});
+    React.useEffect(()=>{
+        setModalData(`\n> ${quoteData.body}\n`)
+      }, [quoteData])
   return (
     <div className="cardStack">
           <Field
@@ -11,6 +14,8 @@ function QuoteMenu() {
             helperText="Type you Quote here."
           >
             <textarea
+            value={quoteData.body}
+            onChange={(e)=>setQuoteData({...quoteData, body:e.target.value})}
               style={{ height: "100px"}}
               className="cardInput"
               placeholder={"Do Good, Be Good."}

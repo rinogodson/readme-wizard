@@ -4,7 +4,7 @@ import { Field } from "../../../components/ui/field";
 
 import myData from "./Slugs.json"
 
-function BadgeMenu() {
+function BadgeMenu({setModalData, modalData}) {
   const [badgeProps, setBadgeProps] = React.useState({
     badgeContent: "React",
     style: "flat",
@@ -12,6 +12,10 @@ function BadgeMenu() {
     color: "494949",
     labelColor: "1b1b1b",
   });
+
+  React.useEffect(()=>{
+          setModalData(`\n![Static Badge](https://img.shields.io/badge/${badgeProps.badgeContent}-${badgeProps.color}?style=${badgeProps.style}&logo=${badgeProps.logo}&labelColor=%23${badgeProps.labelColor})\n`)
+        }, [badgeProps])
 
   console.log(badgeProps.color);
 

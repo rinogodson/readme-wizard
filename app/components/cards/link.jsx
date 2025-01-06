@@ -14,7 +14,7 @@ function LinkMenu({setModalData, modalData}) {
 }
   React.useEffect(()=>{
       setModalData(`\n[${linkData.title}](${formatLink(linkData.link)})\n`)
-    })
+    }, [linkData])
   return (
     <div>
       <div className='cardStack'>

@@ -1,17 +1,16 @@
 import React from "react";
-import { createListCollection, Input } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
 
-import {
-  SelectContent,
-  SelectItem,
-  SelectLabel,
-  SelectRoot,
-  SelectTrigger,
-  SelectValueText,
-} from "../../../components/ui/select";
 import { Field } from "../../../components/ui/field";
 
-function CodeMenu() {
+function CodeMenu({ setModalData, modalData }) {
+  const [codeData, setCodeData] = React.useState({
+    language: "javascript",
+    body: "",
+  });
+  React.useEffect(() => {
+    setModalData(`\n\`\`\`${codeData.language}\n${codeData.body}\n\`\`\`\n`);
+  }, [codeData]);
   return (
     <div className="cardStack">
       <Field
@@ -20,6 +19,8 @@ function CodeMenu() {
         helperText="Paste your code here."
       >
         <textarea
+          value={codeData.body}
+          onChange={(e) => setCodeData({ ...codeData, body: e.target.value })}
           style={{ height: "100px", fontFamily: "JetBrains Mono" }}
           className="cardInput"
           placeholder={"if(wantREADME){\n  readmeWizard.open(); \n }"}
@@ -28,22 +29,23 @@ function CodeMenu() {
 
       <Field
         className="cardField"
-        label=""
-        helperText="Select the language you used here."
+        label="Language"
+        helperText="Select the language."
       >
-        <SelectRoot collection={languages} size="sm" width="320px">
-          <SelectLabel>Language</SelectLabel>
-          <SelectTrigger>
-            <SelectValueText className="cardInput" placeholder="Select Language" />
-          </SelectTrigger>
-          <SelectContent>
-            {languages.items.map((lang) => (
-              <SelectItem item={lang} key={lang.value}>
-                {lang.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </SelectRoot>
+        <select
+          value={codeData.language}
+          onChange={(e) =>
+            setCodeData({ ...codeData, language: e.target.value })
+          }
+          name="styles"
+          className="cardInput"
+        >
+          {languages.items.map((item) => (
+            <option key={item.value} value={item.value}>
+              {item.label}
+            </option>
+          ))}
+        </select>
       </Field>
     </div>
   );
@@ -51,7 +53,7 @@ function CodeMenu() {
 
 export default CodeMenu;
 
-const languages = createListCollection({
+const languages = {
   items: [
     { label: "JavaScript", value: "javascript" },
     { label: "Python", value: "python" },
@@ -102,5 +104,5 @@ const languages = createListCollection({
     { label: "Awk", value: "awk" },
     { label: "Tcl", value: "tcl" },
     { label: "Bash", value: "bash" },
-  ]
-})
+  ],
+};

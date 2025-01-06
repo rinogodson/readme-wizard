@@ -292,6 +292,7 @@ function AddMenu({ showModal, setShowModal, setCurrentModal }) {
 CARD!!
 InputBox, NumberInput, Combobox, 
 */
+// TODO: fix the upload button, add syntax highlightings
 
 function Card({
   setShowModal,
@@ -312,9 +313,7 @@ function Card({
       case "link":
         return <LinkMenu setModalData={setModalData} modalData={modalData} />;
       case "section":
-        return (
-          <SectionMenu setModalData={setModalData} modalData={modalData} />
-        );
+        return <SectionMenu setModalData={setModalData} modalData={modalData} />
       case "code":
         return <CodeMenu setModalData={setModalData} modalData={modalData} />;
       case "quote":
@@ -327,37 +326,37 @@ function Card({
   }
   return (
     <div className="card-cont">
-        <motion.div
-          initial={{ opacity: "0", translateY: "50px" }}
-          animate={{ opacity: "1", translateY: "0px" }}
-          exit={{opacity: "0", translateY: "-50px"}}
-          className="CardBox"
-        >
-          <div className="CardBody">
-            <>{renderModal()}</>
-          </div>
-          <div className="CardFooter">
-            <button
-              style={{ backgroundColor: "#FF3751", color: "#f0f0f0" }}
-              className="CardBt"
-              onClick={() => {
-                setShowModal(false);
-              }}
-            >
-              Cancel
-            </button>
-            <button
-              style={{ backgroundColor: "#f0f0f0", color: "#0b0b0b" }}
-              className="CardBt"
-              onClick={() => {
-                addModalData();
-                setShowModal(false);
-              }}
-            >
-              OK
-            </button>
-          </div>
-        </motion.div>
+      <motion.div
+        initial={{ opacity: "0", translateY: "50px" }}
+        animate={{ opacity: "1", translateY: "0px" }}
+        exit={{ opacity: "0", translateY: "-50px" }}
+        className="CardBox"
+      >
+        <div className="CardBody">
+          <>{renderModal()}</>
+        </div>
+        <div className="CardFooter">
+          <button
+            style={{ backgroundColor: "#FF3751", color: "#f0f0f0" }}
+            className="CardBt"
+            onClick={() => {
+              setShowModal(false);
+            }}
+          >
+            Cancel
+          </button>
+          <button
+            style={{ backgroundColor: "#f0f0f0", color: "#0b0b0b" }}
+            className="CardBt"
+            onClick={() => {
+              addModalData();
+              setShowModal(false);
+            }}
+          >
+            OK
+          </button>
+        </div>
+      </motion.div>
     </div>
   );
 }
