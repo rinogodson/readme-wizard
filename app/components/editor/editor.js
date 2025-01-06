@@ -5,7 +5,6 @@ import "github-markdown-css/github-markdown.css";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSanitize from "rehype-sanitize";
-import { chakra } from "@chakra-ui/react";
 
 function Editor({ mdText, setMDText, textAreaRef }) {
   const [lineNums, setLineNumbers] = React.useState(1);

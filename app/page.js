@@ -29,8 +29,6 @@ import CodeMenu from "./components/cards/code";
 import QuoteMenu from "./components/cards/quote";
 import BadgeMenu from "./components/cards/badge";
 
-import Joyride from "react-joyride";
-
 function Page() {
   const [mdText, setMDText] = React.useState("");
   const [typing, setTyping] = React.useState(false);
@@ -102,22 +100,8 @@ function Page() {
 
   return (
     <>
-      <Toaster />
-      <Joyride steps={steps} event={'hover'} placement={"left-start"}
+      <Toaster />      
       
-      styles={{
-        fontFamily: "Mona Sans",
-        options: {
-          arrowColor: 'rgba(0, 0, 0, 0)',
-          backgroundColor: '#1b1b1b',
-          overlayColor: 'rgba(0, 0, 0, 0.2)',
-          primaryColor: '#E6FF02',
-          textColor: '#fff',
-          width: "fit-content",
-          zIndex: 1000,
-        },
-      }}
-      />
       <div className="bg"></div>
       <div className="container">
         <div className="top">
