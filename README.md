@@ -47,3 +47,5 @@ Contributions are highly valued and welcome! Please fork the repository and subm
 
 ## 📄 Licensing Information  
 This project is licensed under the [MIT License](LICENSE).
+
+[FIGMA DESIGN LINK](https://www.figma.com/design/xG70vfmtSN1nfg773bBaOP/READMEready!?node-id=0-1&t=nd8OAouUTGUpOKux-1)
